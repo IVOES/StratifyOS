@@ -1,0 +1,2441 @@
+src/boot/boot_link.c:377:21: style: The comparison 'is_verified == 1' is always true. [knownConditionTrueFalse]
+    if (is_verified == 1) {
+                    ^
+src/boot/boot_link.c:374:29: note: 'is_verified' is assigned value '1' here.
+    const int is_verified = 1;
+                            ^
+src/boot/boot_link.c:377:21: note: The comparison 'is_verified == 1' is always true.
+    if (is_verified == 1) {
+                    ^
+src/cortexm/cortexm.c:182:29: style:inconclusive: Boolean expression '(u32)callback>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    (((u32)callback >= (u32)&_text)     // cppcheck-suppress[clarifyCondition]
+                            ^
+src/cortexm/cortexm.c:183:31: style:inconclusive: Boolean expression '(u32)callback<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+     && ((u32)callback < (u32)&_etext)) // cppcheck-suppress[clarifyCondition]
+                              ^
+src/cortexm/cortexm.c:184:32: style:inconclusive: Boolean expression '(u32)callback>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    || (((u32)callback >= (u32)&_tcim) && ((u32)callback < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                               ^
+src/cortexm/cortexm.c:184:65: style:inconclusive: Boolean expression '(u32)callback<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    || (((u32)callback >= (u32)&_tcim) && ((u32)callback < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                                                                ^
+src/cortexm/cortexm.c:182:29: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+    (((u32)callback >= (u32)&_text)     // cppcheck-suppress[clarifyCondition]
+                            ^
+src/cortexm/cortexm.c:183:31: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+     && ((u32)callback < (u32)&_etext)) // cppcheck-suppress[clarifyCondition]
+                              ^
+src/cortexm/cortexm.c:184:32: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+    || (((u32)callback >= (u32)&_tcim) && ((u32)callback < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                               ^
+src/cortexm/cortexm_local.h:16:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  SysTick->CTRL |= SYSTICK_CTRL_TICKINT;
+^
+src/cortexm/cortexm_local.h:23:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  SysTick->CTRL &= ~SYSTICK_CTRL_TICKINT;
+^
+src/cortexm/cortexm.c:32:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (SysTick->CTRL & 0x01) { // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/cortexm.c:262:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  return SysTick->VAL; // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/cortexm.c:266:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  return SysTick->LOAD; // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/cortexm.c:270:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  SysTick->LOAD = value; // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/cortexm.c:274:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  SysTick->CTRL = (1 << 0) | (1 << 2); // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/task.c:300:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  *val = m_task_rr_reload - SysTick->VAL; // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/cortexm/task.c:431:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    SysTick->LOAD = sos_task_table[m_task_current]
+^
+src/cortexm/task.c:433:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    SysTick->VAL = 0; // cppcheck-suppress[ConfigurationNotChecked] force a reload
+^
+src/cortexm/task.c:462:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  sos_task_table[task_get_current()].rr_time = SysTick->VAL;
+^
+src/cortexm/task.c:471:0: information: Skipping configuration 'SysTick' since the value of 'SysTick' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (SysTick->CTRL & (1 << 16)) { // cppcheck-suppress[ConfigurationNotChecked]
+^
+src/crt/crt_common.c:83:31: warning: The address of local variable '_ctors' might be accessed at non-zero index. [objectIndex]
+    void (*ctor)() = (&_ctors)[i];
+                              ^
+src/crt/crt_common.c:83:23: note: Address of variable taken here.
+    void (*ctor)() = (&_ctors)[i];
+                      ^
+src/crt/crt_common.c:83:31: note: The address of local variable '_ctors' might be accessed at non-zero index.
+    void (*ctor)() = (&_ctors)[i];
+                              ^
+src/crt/crt_common.c:93:31: warning: The address of local variable '_dtors' might be accessed at non-zero index. [objectIndex]
+    void (*dtor)() = (&_dtors)[i];
+                              ^
+src/crt/crt_common.c:93:23: note: Address of variable taken here.
+    void (*dtor)() = (&_dtors)[i];
+                      ^
+src/crt/crt_common.c:93:31: note: The address of local variable '_dtors' might be accessed at non-zero index.
+    void (*dtor)() = (&_dtors)[i];
+                              ^
+src/crt/crt_common.c:34:31: error: Subtracting pointers that point to different objects [comparePointers]
+    (uint32_t)((char *)&_ebss - (char *)&_bss) // cppcheck-suppress[comparePointers]
+                              ^
+src/crt/crt_common.h:23:17: note: Variable declared here.
+extern uint32_t _ebss;
+                ^
+src/crt/crt_common.c:34:24: note: Address of variable taken here.
+    (uint32_t)((char *)&_ebss - (char *)&_bss) // cppcheck-suppress[comparePointers]
+                       ^
+src/crt/crt_common.h:22:17: note: Variable declared here.
+extern uint32_t _bss;
+                ^
+src/crt/crt_common.c:34:41: note: Address of variable taken here.
+    (uint32_t)((char *)&_ebss - (char *)&_bss) // cppcheck-suppress[comparePointers]
+                                        ^
+src/crt/crt_common.c:34:31: note: Subtracting pointers that point to different objects
+    (uint32_t)((char *)&_ebss - (char *)&_bss) // cppcheck-suppress[comparePointers]
+                              ^
+src/device/drive_sdio.c:21:32: style: Variable 'handle' is assigned a value that is never used. [unreadVariable]
+  const devfs_handle_t *handle = context;
+                               ^
+src/device/drive_sdspi.c:807:10: warning: Either the condition 'r==0' is redundant or there is possible null pointer dereference: r. [nullPointerRedundantCheck]
+  memset(r, 0xFF, sizeof(drive_sdspi_r_t));
+         ^
+src/device/drive_sdspi.c:800:9: note: Assuming that condition 'r==0' is not redundant
+  if (r == 0) {
+        ^
+src/device/drive_sdspi.c:807:10: note: Null pointer dereference
+  memset(r, 0xFF, sizeof(drive_sdspi_r_t));
+         ^
+src/device/drive_sdspi.c:367:18: style: Local variable 'attr' shadows outer variable [shadowVariable]
+      spi_attr_t attr;
+                 ^
+src/device/drive_sdspi.c:333:17: note: Shadowed declaration
+  drive_attr_t *attr = ctl;
+                ^
+src/device/drive_sdspi.c:367:18: note: Shadow variable
+      spi_attr_t attr;
+                 ^
+src/device/ffifo.c:38:32: style: Variable 'atomic_postion.atomic_access' is assigned a value that is never used. [unreadVariable]
+  atomic_postion.atomic_access =
+                               ^
+src/device/ffifo.c:103:35: style: Variable 'atomic_position.atomic_access' is assigned a value that is never used. [unreadVariable]
+    atomic_position.atomic_access =
+                                  ^
+src/device/ffifo.c:182:33: style: Variable 'atomic_position.atomic_access' is assigned a value that is never used. [unreadVariable]
+  atomic_position.atomic_access =
+                                ^
+src/device/fifo.c:88:35: style: Variable 'atomic_position.atomic_access' is assigned a value that is never used. [unreadVariable]
+    atomic_position.atomic_access =
+                                  ^
+src/device/fifo.c:162:33: style: Variable 'atomic_position.atomic_access' is assigned a value that is never used. [unreadVariable]
+  atomic_position.atomic_access =
+                                ^
+src/device/microchip/sst25vf.c:118:50: style: Expression is always true because 'else if' condition is opposite to previous condition at line 112. [multiCondition]
+  } else if (sos_config.sys.core_clock_frequency > 25000000) {
+                                                 ^
+src/device/microchip/sst25vf.c:112:43: note: first condition
+  if (sos_config.sys.core_clock_frequency <= 25000000) {
+                                          ^
+src/device/microchip/sst25vf.c:118:50: note: else if condition is opposite to first condition
+  } else if (sos_config.sys.core_clock_frequency > 25000000) {
+                                                 ^
+src/device/microchip/sst25vf_share.c:47:46: error: The address of local variable 'addr' is accessed at non-zero index. [objectIndex]
+  mcu_spi_swap(handle, (void *)(ssize_t)addrp[2]); // cppcheck-suppress[objectIndex]
+                                             ^
+src/device/microchip/sst25vf_share.c:43:22: note: Address of variable taken here.
+  addrp = (uint8_t *)&addr;
+                     ^
+src/device/microchip/sst25vf_share.c:47:46: note: The address of local variable 'addr' is accessed at non-zero index.
+  mcu_spi_swap(handle, (void *)(ssize_t)addrp[2]); // cppcheck-suppress[objectIndex]
+                                             ^
+src/device/microchip/sst25vf_share.c:48:46: error: The address of local variable 'addr' is accessed at non-zero index. [objectIndex]
+  mcu_spi_swap(handle, (void *)(ssize_t)addrp[1]); // cppcheck-suppress[objectIndex]
+                                             ^
+src/device/microchip/sst25vf_share.c:43:22: note: Address of variable taken here.
+  addrp = (uint8_t *)&addr;
+                     ^
+src/device/microchip/sst25vf_share.c:48:46: note: The address of local variable 'addr' is accessed at non-zero index.
+  mcu_spi_swap(handle, (void *)(ssize_t)addrp[1]); // cppcheck-suppress[objectIndex]
+                                             ^
+src/device/reset_tmr.c:27:49: error: Invalid memcpy() argument nr 3. A non-boolean value is required. [invalidFunctionArgBool]
+  if (memcpy(wop->buf, "reset", sizeof("reset") == 0)) {
+                                                ^
+src/device/reset_tmr.c:44:32: style: Variable 'device' is assigned a value that is never used. [unreadVariable]
+  const devfs_device_t *device = config->tmr_device;
+                               ^
+src/device/reset_tmr.c:46:14: style: Unused variable: tmr [unusedVariable]
+  tmr_attr_t tmr;
+             ^
+src/device/switchboard.c:327:7: style:inconclusive: Function 'destroy_connection' argument 3 names different: declaration 'i' definition 'id'. [funcArgNamesDifferent]
+  u16 id) {
+      ^
+src/device/switchboard.c:18:88: note: Function 'destroy_connection' argument 3 names different: declaration 'i' definition 'id'.
+destroy_connection(const switchboard_config_t *config, switchboard_state_t *state, u16 i);
+                                                                                       ^
+src/device/switchboard.c:327:7: note: Function 'destroy_connection' argument 3 names different: declaration 'i' definition 'id'.
+  u16 id) {
+      ^
+src/link/link.c:282:3: style:inconclusive: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+  return 0;
+  ^
+src/link/link.c:190:7: style: The scope of the variable 'tries' can be reduced. [variableScope]
+  int tries = 0;
+      ^
+src/link/link.c:368:7: style: The scope of the variable 'err2' can be reduced. [variableScope]
+  int err2;
+      ^
+src/link/link_bootloader.c:258:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/link/link_bootloader.c:285:9: portability: 'buf' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    buf += page_size;
+        ^
+src/link/link_bootloader.c:38:10: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+    (ret = link_ioctl(
+         ^
+src/link/link_dir.c:130:33: warning: Either the condition 'dirname==NULL' is redundant or there is possible null pointer dereference: dirname. [nullPointerRedundantCheck]
+  op.opendir.path_size = strlen(dirname) + 1;
+                                ^
+src/link/link_dir.c:132:15: note: Assuming that condition 'dirname==NULL' is not redundant
+  if (dirname == NULL) {
+              ^
+src/link/link_dir.c:130:33: note: Null pointer dereference
+  op.opendir.path_size = strlen(dirname) + 1;
+                                ^
+src/link/link_file.c:441:5: style: Same expression on both sides of '||'. [duplicateExpression]
+    || (op.symlink.path_size_old > driver->path_max)) {
+    ^
+src/link/link_file.c:83:11: style: The scope of the variable 'ap' can be reduced. [variableScope]
+  va_list ap;
+          ^
+src/link/link_file.c:638:22: error: Uninitialized variable: output [uninitvar]
+  convert_stat(buf, &output);
+                     ^
+src/link/link_file.c:704:22: error: Uninitialized variable: output [uninitvar]
+  convert_stat(buf, &output);
+                     ^
+src/link/link_file.c:65:0: information: Skipping configuration 'O_NONBLOCK' since the value of 'O_NONBLOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (link_flags & O_NONBLOCK) {
+^
+src/link/link_phy.c:442:38: warning: Comparison of modulo result is predetermined, because it is always less than 1. [moduloAlwaysTrueFalse]
+      if (serial_options->parity % 1 == 1) {
+                                     ^
+src/link/link_phy.c:493:7: style: The scope of the variable 'tmp' can be reduced. [variableScope]
+  int tmp;
+      ^
+src/link/link_phy.c:494:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/link/link_phy.c:370:66: style:inconclusive: Function 'link_phy_open' argument 2 names different: declaration 'options' definition 's_options'. [funcArgNamesDifferent]
+link_transport_phy_t link_phy_open(const char *name, const void *s_options) {
+                                                                 ^
+src/link/link_local.h:51:68: note: Function 'link_phy_open' argument 2 names different: declaration 'options' definition 's_options'.
+link_transport_phy_t link_phy_open(const char * name, const void * options);
+                                                                   ^
+src/link/link_phy.c:370:66: note: Function 'link_phy_open' argument 2 names different: declaration 'options' definition 's_options'.
+link_transport_phy_t link_phy_open(const char *name, const void *s_options) {
+                                                                 ^
+src/link/link_phy.c:197:38: warning: Comparison of modulo result is predetermined, because it is always less than 1. [moduloAlwaysTrueFalse]
+      if (serial_options->parity % 1 == 1) {
+                                     ^
+src/link/link_phy.c:105:9: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+    err = 100;
+        ^
+src/link_transport/link1_transport_master.c:34:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/link_transport/link1_transport_master.c:88:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/link_transport/link1_transport_master.c:148:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/link_transport/link2_transport_master.c:32:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/link_transport/link2_transport_master.c:153:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/link_transport/link2_transport_master.c:158:18: style: Variable 'loop_count' is assigned a value that is never used. [unreadVariable]
+  int loop_count = 0;
+                 ^
+src/link_transport/link3_transport_master.c:140:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err;
+      ^
+src/link_transport/link3_transport_master.c:283:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/sys/link/link_thread.c:633:66: style:inconclusive: Function 'read_device' argument 3 names different: declaration 'size' definition 'nbyte'. [funcArgNamesDifferent]
+int read_device(link_transport_driver_t *driver, int fildes, int nbyte) {
+                                                                 ^
+src/sys/link/link_thread.c:39:73: note: Function 'read_device' argument 3 names different: declaration 'size' definition 'nbyte'.
+static int read_device(link_transport_driver_t *driver, int fildes, int size);
+                                                                        ^
+src/sys/link/link_thread.c:633:66: note: Function 'read_device' argument 3 names different: declaration 'size' definition 'nbyte'.
+int read_device(link_transport_driver_t *driver, int fildes, int nbyte) {
+                                                                 ^
+src/sys/link/link_thread.c:637:67: style:inconclusive: Function 'write_device' argument 3 names different: declaration 'size' definition 'nbyte'. [funcArgNamesDifferent]
+int write_device(link_transport_driver_t *driver, int fildes, int nbyte) {
+                                                                  ^
+src/sys/link/link_thread.c:40:74: note: Function 'write_device' argument 3 names different: declaration 'size' definition 'nbyte'.
+static int write_device(link_transport_driver_t *driver, int fildes, int size);
+                                                                         ^
+src/sys/link/link_thread.c:637:67: note: Function 'write_device' argument 3 names different: declaration 'size' definition 'nbyte'.
+int write_device(link_transport_driver_t *driver, int fildes, int nbyte) {
+                                                                  ^
+src/sys/mqueue/mqueue.c:297:12: style: struct member 'msg_file_hdr_t::signature' is never used. [unusedStructMember]
+  uint32_t signature;
+           ^
+src/sys/mqueue/mqueue.c:298:12: style: struct member 'msg_file_hdr_t::not_signature' is never used. [unusedStructMember]
+  uint32_t not_signature;
+           ^
+src/sys/mqueue/mqueue.c:303:9: style: struct member 'root_block_on_mq_t::block' is never used. [unusedStructMember]
+  void *block;
+        ^
+src/sys/process/install.c:100:20: style: Variable 'bytes_read' is assigned a value that is never used. [unreadVariable]
+    int bytes_read = 0;
+                   ^
+src/sys/process/process_start.c:43:31: style:inconclusive: Function 'process_start' argument 1 names different: declaration 'path' definition 'path_arg'. [funcArgNamesDifferent]
+int process_start(const char *path_arg, char *const envp[]) {
+                              ^
+src/sys/process/process_start.h:18:31: note: Function 'process_start' argument 1 names different: declaration 'path' definition 'path_arg'.
+int process_start(const char *path, char *const envp[]);
+                              ^
+src/sys/process/process_start.c:43:31: note: Function 'process_start' argument 1 names different: declaration 'path' definition 'path_arg'.
+int process_start(const char *path_arg, char *const envp[]) {
+                              ^
+src/sys/pthread/pthread_cond.c:51:17: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+    *cond |= (1 << PSHARED_FLAG); // cppcheck-suppress[shiftTooManyBitsSigned]
+                ^
+src/sys/pthread/pthread_cond.c:202:19: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+  if ((*cond & (1 << PSHARED_FLAG)) == 0) { // cppcheck-suppress[shiftTooManyBitsSigned]
+                  ^
+src/sys/pthread/pthread_cond.c:51:17: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+    *cond |= (1 << PSHARED_FLAG); // cppcheck-suppress[shiftTooManyBitsSigned]
+                ^
+src/sys/pthread/pthread_cond.c:202:19: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+  if ((*cond & (1 << PSHARED_FLAG)) == 0) { // cppcheck-suppress[shiftTooManyBitsSigned]
+                  ^
+src/sys/scheduler/scheduler_timing.c:73:79: style:inconclusive: Function 'scheduler_timing_root_timedblock' argument 2 names different: declaration 'interval' definition 'abs_time'. [funcArgNamesDifferent]
+void scheduler_timing_root_timedblock(void *block_object, struct mcu_timeval *abs_time) {
+                                                                              ^
+src/sys/scheduler/scheduler_timing.h:12:81: note: Function 'scheduler_timing_root_timedblock' argument 2 names different: declaration 'interval' definition 'abs_time'.
+void scheduler_timing_root_timedblock(void * block_object, struct mcu_timeval * interval);
+                                                                                ^
+src/sys/scheduler/scheduler_timing.c:73:79: note: Function 'scheduler_timing_root_timedblock' argument 2 names different: declaration 'interval' definition 'abs_time'.
+void scheduler_timing_root_timedblock(void *block_object, struct mcu_timeval *abs_time) {
+                                                                              ^
+src/sys/scheduler/scheduler_local.h:80:0: information: Skipping configuration 'CONFIG_TASK_PROCESS_TIMER_COUNT' since the value of 'CONFIG_TASK_PROCESS_TIMER_COUNT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  sos_process_timer_t timer[CONFIG_TASK_PROCESS_TIMER_COUNT];
+^
+src/sys/scheduler/scheduler_timing.c:45:0: information: Skipping configuration 'CONFIG_TASK_PROCESS_TIMER_COUNT' since the value of 'CONFIG_TASK_PROCESS_TIMER_COUNT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  return CONFIG_TASK_PROCESS_TIMER_COUNT;
+^
+src/sys/scheduler/scheduler_timing.c:280:0: information: Skipping configuration 'CONFIG_TASK_PROCESS_TIMER_COUNT' since the value of 'CONFIG_TASK_PROCESS_TIMER_COUNT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      for (int j = 0; j < CONFIG_TASK_PROCESS_TIMER_COUNT; j++) {
+^
+src/sys/scheduler/scheduler_timing.c:371:0: information: Skipping configuration 'CONFIG_TASK_PROCESS_TIMER_COUNT' since the value of 'CONFIG_TASK_PROCESS_TIMER_COUNT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  for (int i = 0; i < CONFIG_TASK_PROCESS_TIMER_COUNT; i++) {
+^
+src/sys/scheduler/scheduler_timing.c:602:0: information: Skipping configuration 'CONFIG_TASK_PROCESS_TIMER_COUNT' since the value of 'CONFIG_TASK_PROCESS_TIMER_COUNT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  for (u8 j = 0; j < CONFIG_TASK_PROCESS_TIMER_COUNT; j++) {
+^
+src/sys/scheduler/scheduler_tmr.c:10:9: style: struct member 'sos_scheduler_tmr_t::init' is never used. [unusedStructMember]
+  int (*init)();
+        ^
+src/sys/scheduler/scheduler_tmr.c:11:10: style: struct member 'sos_scheduler_tmr_t::enable' is never used. [unusedStructMember]
+  void (*enable)();
+         ^
+src/sys/scheduler/scheduler_tmr.c:12:10: style: struct member 'sos_scheduler_tmr_t::disable' is never used. [unusedStructMember]
+  void (*disable)();
+         ^
+src/sys/scheduler/scheduler_tmr.c:13:10: style: struct member 'sos_scheduler_tmr_t::set_channel' is never used. [unusedStructMember]
+  void (*set_channel)(mcu_channel_t channel);
+         ^
+src/sys/scheduler/scheduler_tmr.c:14:10: style: struct member 'sos_scheduler_tmr_t::microseconds' is never used. [unusedStructMember]
+  void (*microseconds)();
+         ^
+src/sys/scheduler/scheduler_tmr.c:15:10: style: struct member 'sos_scheduler_tmr_t::nanoseconds' is never used. [unusedStructMember]
+  void (*nanoseconds)();
+         ^
+src/sys/sffs/sffs_local.h:83:0: information: Skipping configuration 'NAME_MAX' since the value of 'NAME_MAX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ char name[NAME_MAX+1];
+^
+src/sys/sffs/sffs.c:229:8: style: Variable 'ret' is reassigned a value before the old one has been used. [redundantAssignment]
+   ret = 0;
+       ^
+src/sys/sffs/sffs.c:227:9: note: ret is assigned
+    ret = -1;
+        ^
+src/sys/sffs/sffs.c:229:8: note: ret is overwritten
+   ret = 0;
+       ^
+src/sys/sffs/sffs_block.c:59:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+src/sys/sffs/sffs_block.c:203:6: style: The scope of the variable 'first_loop' can be reduced. [variableScope]
+ int first_loop;
+     ^
+src/sys/sffs/sffs_block.c:298:6: style: The scope of the variable 'written' can be reduced. [variableScope]
+ int written;
+     ^
+src/sys/sffs/sffs_block.c:299:7: style: The scope of the variable 'do_erase' can be reduced. [variableScope]
+ bool do_erase;
+      ^
+src/sys/sffs/sffs_block.c:165:52: style:inconclusive: Function 'sffs_block_setstatus' argument 2 names different: declaration 'sffs_block_num' definition 'block'. [funcArgNamesDifferent]
+int sffs_block_setstatus(const void * cfg, block_t block, uint8_t status){
+                                                   ^
+src/sys/sffs/sffs_block.h:30:52: note: Function 'sffs_block_setstatus' argument 2 names different: declaration 'sffs_block_num' definition 'block'.
+int sffs_block_setstatus(const void * cfg, block_t sffs_block_num, uint8_t status);
+                                                   ^
+src/sys/sffs/sffs_block.c:165:52: note: Function 'sffs_block_setstatus' argument 2 names different: declaration 'sffs_block_num' definition 'block'.
+int sffs_block_setstatus(const void * cfg, block_t block, uint8_t status){
+                                                   ^
+src/sys/sffs/sffs_diag.c:46:6: style: The scope of the variable 'eraseable' can be reduced. [variableScope]
+ int eraseable;
+     ^
+src/sys/sffs/sffs_diag.c:48:6: style: The scope of the variable 'uneraseable' can be reduced. [variableScope]
+ int uneraseable;
+     ^
+src/sys/sffs/sffs_diag.c:240:6: style: The scope of the variable 'eraseable' can be reduced. [variableScope]
+ int eraseable;
+     ^
+src/sys/sffs/sffs_diag.c:242:6: style: The scope of the variable 'free_blocks' can be reduced. [variableScope]
+ int free_blocks;
+     ^
+src/sys/sffs/sffs_diag.c:243:6: style: The scope of the variable 'dirty_blocks' can be reduced. [variableScope]
+ int dirty_blocks;
+     ^
+src/sys/sffs/sffs_diag.c:244:6: style: The scope of the variable 'written_blocks' can be reduced. [variableScope]
+ int written_blocks;
+     ^
+src/sys/sffs/sffs_dir.c:50:0: information: Skipping configuration 'NAME_MAX' since the value of 'NAME_MAX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if ( strncmp(path, hdr->open.name, NAME_MAX) == 0 ){
+^
+src/sys/sffs/sffs_file.c:100:6: style: The scope of the variable 'nsegments' can be reduced. [variableScope]
+ int nsegments;
+     ^
+src/sys/sffs/sffs_file.c:162:6: style: The scope of the variable 'nsegments' can be reduced. [variableScope]
+ int nsegments;
+     ^
+src/sys/sffs/sffs_file.c:308:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+src/sys/sffs/sffs_file.c:334:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+src/sys/sffs/sffs_file.c:634:10: style: The scope of the variable 'discard_status' can be reduced. [variableScope]
+ uint8_t discard_status;
+         ^
+src/sys/sffs/sffs_file.c:772:20: style: Variable 'new_block' is assigned a value that is never used. [unreadVariable]
+   if ( (new_block = sffs_serialno_get(cfg, serialno, SFFS_SNLIST_ITEM_STATUS_CLOSED, &new_addr)) == BLOCK_INVALID ){
+                   ^
+src/sys/sffs/sffs_file.c:50:18: portability: 'handle->op->buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ handle->op->buf += page_size;
+                 ^
+src/sys/sffs/sffs_file.c:319:20: portability: 'handle->op->buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   handle->op->buf += BLOCK_DATA_SIZE;
+                   ^
+src/sys/sffs/sffs_file.c:341:20: portability: 'handle->op->buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   handle->op->buf += BLOCK_DATA_SIZE;
+                   ^
+src/sys/sffs/sffs_list.c:119:9: style: The scope of the variable 'new_item' can be reduced. [variableScope]
+ void * new_item;
+        ^
+src/sys/sffs/sffs_list.c:198:3: error: Uninitialized variable: i [uninitvar]
+  i++;
+  ^
+src/sys/sffs/sffs_list.c:215:3: error: Uninitialized variable: j [uninitvar]
+  j++;
+  ^
+src/sys/sffs/sffs_list.c:180:6: style: Variable 'i' is not assigned a value. [unassignedVariable]
+ int i,j;
+     ^
+src/sys/sffs/sffs_list.c:180:8: style: Variable 'j' is not assigned a value. [unassignedVariable]
+ int i,j;
+       ^
+src/sys/sffs/sffs_scratch.c:52:24: warning: The address of local variable 'entry' might be accessed at non-zero index. [objectIndex]
+  entry->checksum += ~p[i];
+                       ^
+src/sys/sffs/sffs_scratch.c:227:15: note: Address of variable taken here.
+ set_checksum(&entry);
+              ^
+src/sys/sffs/sffs_scratch.c:227:15: note: Calling function 'set_checksum', 1st argument '&entry' value is lifetime=entry
+ set_checksum(&entry);
+              ^
+src/sys/sffs/sffs_scratch.c:52:24: note: The address of local variable 'entry' might be accessed at non-zero index.
+  entry->checksum += ~p[i];
+                       ^
+src/sys/sffs/sffs_scratch.c:63:17: warning: The address of local variable 'entry' might be accessed at non-zero index. [objectIndex]
+  checksum += ~p[i];
+                ^
+src/sys/sffs/sffs_scratch.c:253:26: note: Address of variable taken here.
+   if( validate_checksum(&entry) == 0 ){ //only restore blocks with valid checksums
+                         ^
+src/sys/sffs/sffs_scratch.c:253:26: note: Calling function 'validate_checksum', 1st argument '&entry' value is lifetime=entry
+   if( validate_checksum(&entry) == 0 ){ //only restore blocks with valid checksums
+                         ^
+src/sys/sffs/sffs_scratch.c:63:17: note: The address of local variable 'entry' might be accessed at non-zero index.
+  checksum += ~p[i];
+                ^
+src/sys/sffs/sffs_scratch.c:102:32: warning: The address of local variable 'tmp' might be accessed at non-zero index. [objectIndex]
+  if ( ((unsigned char*)(&tmp))[i] != 0xFF ){
+                               ^
+src/sys/sffs/sffs_scratch.c:102:26: note: Address of variable taken here.
+  if ( ((unsigned char*)(&tmp))[i] != 0xFF ){
+                         ^
+src/sys/sffs/sffs_scratch.c:102:32: note: The address of local variable 'tmp' might be accessed at non-zero index.
+  if ( ((unsigned char*)(&tmp))[i] != 0xFF ){
+                               ^
+src/sys/sffs/sffs_serialno.c:43:24: warning: The address of local variable 'item' might be accessed at non-zero index. [objectIndex]
+  entry->checksum += ~p[i];
+                       ^
+src/sys/sffs/sffs_serialno.c:425:15: note: Address of variable taken here.
+ set_checksum(&item);
+              ^
+src/sys/sffs/sffs_serialno.c:425:15: note: Calling function 'set_checksum', 1st argument '&item' value is lifetime=item
+ set_checksum(&item);
+              ^
+src/sys/sffs/sffs_serialno.c:43:24: note: The address of local variable 'item' might be accessed at non-zero index.
+  entry->checksum += ~p[i];
+                       ^
+src/sys/sffs/sffs_serialno.c:54:17: warning: The address of local variable 'item' might be accessed at non-zero index. [objectIndex]
+  checksum += ~p[i];
+                ^
+src/sys/sffs/sffs_serialno.c:387:25: note: Address of variable taken here.
+  if( validate_checksum(&item) == 0 ){
+                        ^
+src/sys/sffs/sffs_serialno.c:387:25: note: Calling function 'validate_checksum', 1st argument '&item' value is lifetime=item
+  if( validate_checksum(&item) == 0 ){
+                        ^
+src/sys/sffs/sffs_serialno.c:54:17: note: The address of local variable 'item' might be accessed at non-zero index.
+  checksum += ~p[i];
+                ^
+src/sys/sffs/sffs_serialno.c:321:2: style:inconclusive: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+ if ( cl_snlist_init(cfg, &list, sffs_dev_getlist_block(cfg)) < 0 ){
+ ^
+src/sys/sffs/sffs_serialno.c:313:6: style: Variable 'sn' is assigned a value that is never used. [unreadVariable]
+  sn = CL_SERIALNO_LIST + 1;
+     ^
+src/sys/sffs/sffs_tp.c:148:3: error: Common realloc mistake: 'tp_table' nulled but not freed upon failure [memleakOnRealloc]
+  tp_table = realloc(tp_table, size);
+  ^
+src/sys/sffs/sffs_tp.c:40:14: style: The scope of the variable 'update_entry' can be reduced. [variableScope]
+ sffs_tp_t * update_entry;
+             ^
+src/sys/sffs/sffs_tp.c:42:7: style: The scope of the variable 'line' can be reduced. [variableScope]
+ char line[512];
+      ^
+src/sys/sffs/sffs_tp.c:43:7: style: The scope of the variable 'buf' can be reduced. [variableScope]
+ char buf[512];
+      ^
+src/sys/sffs/sffs_tp.c:44:9: style: The scope of the variable 'p' can be reduced. [variableScope]
+ char * p;
+        ^
+src/sys/sffs/sim_dev.c:102:16: style: The scope of the variable 'dest' can be reduced. [variableScope]
+ unsigned char dest;
+               ^
+src/sys/sffs/sim_dev.c:103:16: style: The scope of the variable 'src' can be reduced. [variableScope]
+ unsigned char src;
+               ^
+src/sys/sffs/test_file.c:521:12: style: The if condition is the same as the previous if condition [duplicateCondition]
+  if ( ret != strlen(buffer) ){
+           ^
+src/sys/sffs/test_file.c:518:12: note: First condition
+  if ( ret != strlen(buffer) ){
+           ^
+src/sys/sffs/test_file.c:521:12: note: Second condition
+  if ( ret != strlen(buffer) ){
+           ^
+src/sys/sffs/test_file.c:87:2: style:inconclusive: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+ for(i=0; i < NUM_RW_TESTS; i++){
+ ^
+src/sys/sffs/test_file.c:486:6: style: The scope of the variable 'j' can be reduced. [variableScope]
+ int j;
+     ^
+src/sys/sffs/test_file.c:487:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+src/sys/sffs/test_file.c:488:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len;
+     ^
+src/sys/sffs/test_file.c:491:6: style: The scope of the variable 'loc' can be reduced. [variableScope]
+ int loc;
+     ^
+src/sys/sffs/test_file.c:493:9: style: The scope of the variable 'f' can be reduced. [variableScope]
+ void * f;
+        ^
+src/sys/signal/signal_handler.c:68:48: style:inconclusive: Function 'signal_handler' argument 3 names different: declaration 'si_sigcode_si_tid' definition 'si_sigcode'. [funcArgNamesDifferent]
+void signal_handler(int tid, int si_signo, int si_sigcode, union sigval sig_value) {
+                                               ^
+src/sys/signal/sig_local.h:17:48: note: Function 'signal_handler' argument 3 names different: declaration 'si_sigcode_si_tid' definition 'si_sigcode'.
+void signal_handler(int tid, int si_signo, int si_sigcode_si_tid, union sigval sig_value);
+                                               ^
+src/sys/signal/signal_handler.c:68:48: note: Function 'signal_handler' argument 3 names different: declaration 'si_sigcode_si_tid' definition 'si_sigcode'.
+void signal_handler(int tid, int si_signo, int si_sigcode, union sigval sig_value) {
+                                               ^
+src/sys/sos_interrupt_handlers.c:26:25: style:inconclusive: Boolean expression '(u32)call>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    (((u32)call >= (u32)&_text)
+                        ^
+src/sys/sos_interrupt_handlers.c:27:27: style:inconclusive: Boolean expression '(u32)call<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+     && ((u32)call < (u32)&_etext)) // cppcheck-suppress[clarifyCondition]
+                          ^
+src/sys/sos_interrupt_handlers.c:28:28: style:inconclusive: Boolean expression '(u32)call>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    || (((u32)call >= (u32)&_tcim) && ((u32)call < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                           ^
+src/sys/sos_interrupt_handlers.c:28:57: style:inconclusive: Boolean expression '(u32)call<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    || (((u32)call >= (u32)&_tcim) && ((u32)call < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                                                        ^
+src/sys/sos_interrupt_handlers.c:26:25: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+    (((u32)call >= (u32)&_text)
+                        ^
+src/sys/sos_interrupt_handlers.c:27:27: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+     && ((u32)call < (u32)&_etext)) // cppcheck-suppress[clarifyCondition]
+                          ^
+src/sys/sos_interrupt_handlers.c:28:28: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+    || (((u32)call >= (u32)&_tcim) && ((u32)call < (u32)&_etcim)) // cppcheck-suppress[clarifyCondition]
+                           ^
+src/sys/sys_26_dev.c:104:25: style:inconclusive: Boolean expression 'task_active_asserted(task->tid)!=0' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+                        | ((task_stopped_asserted(task->tid != 0) << 1));
+                        ^
+src/sys/sys_dev.c:164:25: style:inconclusive: Boolean expression 'task_active_asserted(task->tid)!=0' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+                        | ((task_stopped_asserted(task->tid != 0) << 1));
+                        ^
+src/sys/sys_dev.c:39:80: warning: Found calculation inside sizeof(). [sizeofCalculation]
+      info->sys_version, sos_config.sys.version, sizeof(sos_config.sys.version - 1));
+                                                                               ^
+src/sys/sysfs/appfs_util.c:780:25: style:inconclusive: Function 'populate_file_header' argument 1 names different: declaration 'dev' definition 'device'. [funcArgNamesDifferent]
+  const devfs_device_t *device,
+                        ^
+src/sys/sysfs/appfs_util.c:21:25: note: Function 'populate_file_header' argument 1 names different: declaration 'dev' definition 'device'.
+  const devfs_device_t *dev,
+                        ^
+src/sys/sysfs/appfs_util.c:780:25: note: Function 'populate_file_header' argument 1 names different: declaration 'dev' definition 'device'.
+  const devfs_device_t *device,
+                        ^
+src/sys/sysfs/appfs_util.c:783:7: style:inconclusive: Function 'populate_file_header' argument 4 names different: declaration 'type' definition 'memory_type'. [funcArgNamesDifferent]
+  int memory_type) {
+      ^
+src/sys/sysfs/appfs_util.c:24:7: note: Function 'populate_file_header' argument 4 names different: declaration 'type' definition 'memory_type'.
+  int type);
+      ^
+src/sys/sysfs/appfs_util.c:783:7: note: Function 'populate_file_header' argument 4 names different: declaration 'type' definition 'memory_type'.
+  int memory_type) {
+      ^
+src/sys/sysfs/drive_assetfs.c:241:27: style:inconclusive: Function 'find_file' argument 4 names different: declaration 'entry' definition 'directory_entry'. [funcArgNamesDifferent]
+  drive_assetfs_dirent_t *directory_entry) {
+                          ^
+src/sys/sysfs/drive_assetfs.c:35:80: note: Function 'find_file' argument 4 names different: declaration 'entry' definition 'directory_entry'.
+find_file(const void *cfg, const char *path, int *ino, drive_assetfs_dirent_t *entry);
+                                                                               ^
+src/sys/sysfs/drive_assetfs.c:241:27: note: Function 'find_file' argument 4 names different: declaration 'entry' definition 'directory_entry'.
+  drive_assetfs_dirent_t *directory_entry) {
+                          ^
+src/sys/trace/sos_trace.c:124:22: style:inconclusive: Boolean expression 'addr>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+      ((addr >= (u32)&_text) && (addr < (u32)&_etext))
+                     ^
+src/sys/trace/sos_trace.c:124:46: style:inconclusive: Boolean expression 'addr<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+      ((addr >= (u32)&_text) && (addr < (u32)&_etext))
+                                             ^
+src/sys/trace/sos_trace.c:168:22: style:inconclusive: Boolean expression 'input>=(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+  if ((input >= (u32)&_text) && (input < (u32)&_etext)) {
+                     ^
+src/sys/trace/sos_trace.c:168:47: style:inconclusive: Boolean expression 'input<(u32)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+  if ((input >= (u32)&_text) && (input < (u32)&_etext)) {
+                                              ^
+src/sys/trace/sos_trace.c:124:22: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+      ((addr >= (u32)&_text) && (addr < (u32)&_etext))
+                     ^
+src/sys/trace/sos_trace.c:168:22: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+  if ((input >= (u32)&_text) && (input < (u32)&_etext)) {
+                     ^
+src/sys/trace/sos_trace.c:216:3: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+  const u32 *sp;
+  ^
+src/sys/trace/sos_trace.c:328:8: style:inconclusive: Function 'scan_code_for_push' argument 2 names different: declaration 'stack_jump' definition 'stack_jump_result'. [funcArgNamesDifferent]
+  u32 *stack_jump_result,
+       ^
+src/sys/trace/sos_trace.c:37:43: note: Function 'scan_code_for_push' argument 2 names different: declaration 'stack_jump' definition 'stack_jump_result'.
+scan_code_for_push(u32 link_address, u32 *stack_jump, int *link_register_offset);
+                                          ^
+src/sys/trace/sos_trace.c:328:8: note: Function 'scan_code_for_push' argument 2 names different: declaration 'stack_jump' definition 'stack_jump_result'.
+  u32 *stack_jump_result,
+       ^
+src/usbd/sos_link_transport_usb_dual_vcp_descriptors.c:28:1: error: There is an unknown macro here somewhere. Configuration is required. If SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR is a macro then please configure it. [unknownMacro]
+SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR(
+^
+src/usbd/sos_link_transport_usb_link_descriptors.c:85:1: error: There is an unknown macro here somewhere. Configuration is required. If SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR is a macro then please configure it. [unknownMacro]
+SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR(
+^
+src/usbd/sos_link_transport_usb_link_vcp_descriptors.c:178:1: error: There is an unknown macro here somewhere. Configuration is required. If SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR is a macro then please configure it. [unknownMacro]
+SOS_LINK_TRANSPORT_USB_DEVICE_DESCRIPTOR(
+^
+src/usbd/sos_link_transport_usb_vcp_descriptors.c:26:1: error: There is an unknown macro here somewhere. Configuration is required. If SOS_LINK_TRANSPORT_USB_CONST is a macro then please configure it. [unknownMacro]
+SOS_LINK_TRANSPORT_USB_CONST(vcp, usbd_cdc_event_handler)
+^
+src/usbd/usbd_control.c:111:68: style:inconclusive: Function 'usbd_control_add_ptr' argument 3 names different: declaration 'n' definition 'value'. [funcArgNamesDifferent]
+void *usbd_control_add_ptr(usbd_control_t *context, void *ptr, u32 value) {
+                                                                   ^
+src/usbd/usbd_standard.h:13:71: note: Function 'usbd_control_add_ptr' argument 3 names different: declaration 'n' definition 'value'.
+void * usbd_control_add_ptr(usbd_control_t * context, void * ptr, u32 n);
+                                                                      ^
+src/usbd/usbd_control.c:111:68: note: Function 'usbd_control_add_ptr' argument 3 names different: declaration 'n' definition 'value'.
+void *usbd_control_add_ptr(usbd_control_t *context, void *ptr, u32 value) {
+                                                                   ^
+src/sys/malloc/calloc.c:61:0: style: The function '_DEFUN' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:37:0: style: The function '__addsf3' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:33:0: style: The function '__aeabi_fadd' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:29:0: style: The function '__aeabi_fdiv' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:25:0: style: The function '__aeabi_fmul' is never used. [unusedFunction]
+
+^
+src/sys/assert_func.c:8:0: style: The function '__assert_func' is never used. [unusedFunction]
+
+^
+src/sys/symbols.c:6:0: style: The function '__cxa_pure_virtual' is never used. [unusedFunction]
+
+^
+src/sys/symbols.c:8:0: style: The function '__div0' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:60:0: style: The function '__divdc3' is never used. [unusedFunction]
+
+^
+src/sys/libgcc.c:64:0: style: The function '__muldc3' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_execve.c:12:0: style: The function '_execve' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_fcntl.c:38:0: style: The function '_fcntl' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_fork.c:21:0: style: The function '_fork' is never used. [unusedFunction]
+
+^
+src/sys/time/_itimer.c:15:0: style: The function '_getitimer' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_getpid.c:20:0: style: The function '_getpid' is never used. [unusedFunction]
+
+^
+src/sys/time/_gettimeofday.c:35:0: style: The function '_gettimeofday' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_isatty.c:25:0: style: The function '_isatty' is never used. [unusedFunction]
+
+^
+src/sys/signal/_kill.c:25:0: style: The function '_kill' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_link.c:22:0: style: The function '_link' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_rename.c:23:0: style: The function '_rename' is never used. [unusedFunction]
+
+^
+src/sys/malloc/_sbrk.c:60:0: style: The function '_sbrk' is never used. [unusedFunction]
+
+^
+src/sys/time/_itimer.c:21:0: style: The function '_setitimer' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_symlink.c:22:0: style: The function '_symlink' is never used. [unusedFunction]
+
+^
+src/sys/process/_system.c:25:0: style: The function '_system' is never used. [unusedFunction]
+
+^
+src/sys/time/_times.c:45:0: style: The function '_times' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_unlink.c:16:0: style: The function '_unlink' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_fork.c:35:0: style: The function '_vfork' is never used. [unusedFunction]
+
+^
+src/sys/signal/_wait.c:87:0: style: The function '_wait' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:40:0: style: The function 'aio_cancel' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:62:0: style: The function 'aio_error' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:74:0: style: The function 'aio_fsync' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:111:0: style: The function 'aio_return' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:158:0: style: The function 'aio_suspend' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:99:0: style: The function 'aio_write' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:66:0: style: The function 'alarm' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:558:0: style: The function 'appfs_close' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:827:0: style: The function 'appfs_closedir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:123:0: style: The function 'appfs_init' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:759:0: style: The function 'appfs_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs_mem_dev.c:106:0: style: The function 'appfs_mem_close' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs_mem_dev.c:86:0: style: The function 'appfs_mem_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs_mem_dev.c:41:0: style: The function 'appfs_mem_open' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs_mem_dev.c:49:0: style: The function 'appfs_mem_read' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs_mem_dev.c:65:0: style: The function 'appfs_mem_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:178:0: style: The function 'appfs_mkfs' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:183:0: style: The function 'appfs_open' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:574:0: style: The function 'appfs_opendir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:511:0: style: The function 'appfs_read' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:811:0: style: The function 'appfs_readdir_r' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:128:0: style: The function 'appfs_startup' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:410:0: style: The function 'appfs_stat' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:273:0: style: The function 'appfs_unlink' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/appfs.c:523:0: style: The function 'appfs_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:111:0: style: The function 'assetfs_close' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:186:0: style: The function 'assetfs_closedir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:123:0: style: The function 'assetfs_fstat' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:28:0: style: The function 'assetfs_init' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:102:0: style: The function 'assetfs_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:43:0: style: The function 'assetfs_open' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:159:0: style: The function 'assetfs_opendir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:71:0: style: The function 'assetfs_read' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:169:0: style: The function 'assetfs_readdir_r' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:38:0: style: The function 'assetfs_startup' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/assetfs.c:138:0: style: The function 'assetfs_stat' is never used. [unusedFunction]
+
+^
+src/sys/auth/auth_dev.c:79:0: style: The function 'auth_close' is never used. [unusedFunction]
+
+^
+src/device/auth_flash.c:159:0: style: The function 'auth_flash_close' is never used. [unusedFunction]
+
+^
+src/device/auth_flash.c:30:0: style: The function 'auth_flash_ioctl' is never used. [unusedFunction]
+
+^
+src/device/auth_flash.c:13:0: style: The function 'auth_flash_open' is never used. [unusedFunction]
+
+^
+src/device/auth_flash.c:20:0: style: The function 'auth_flash_read' is never used. [unusedFunction]
+
+^
+src/device/auth_flash.c:25:0: style: The function 'auth_flash_write' is never used. [unusedFunction]
+
+^
+src/sys/auth/auth_dev.c:40:0: style: The function 'auth_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/auth/auth_dev.c:35:0: style: The function 'auth_open' is never used. [unusedFunction]
+
+^
+src/sys/auth/auth_dev.c:67:0: style: The function 'auth_read' is never used. [unusedFunction]
+
+^
+src/sys/auth/auth_dev.c:73:0: style: The function 'auth_write' is never used. [unusedFunction]
+
+^
+src/boot/boot_main.c:135:0: style: The function 'boot_handle_auth_event' is never used. [unusedFunction]
+
+^
+src/boot/boot_main.c:22:0: style: The function 'boot_invoke_bootloader' is never used. [unusedFunction]
+
+^
+src/boot/boot_link.c:410:0: style: The function 'boot_link_cmd_write' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:166:0: style: The function 'boot_link_transport_usb_close' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:178:0: style: The function 'boot_link_transport_usb_flush' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:27:0: style: The function 'boot_link_transport_usb_open' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:140:0: style: The function 'boot_link_transport_usb_read' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:171:0: style: The function 'boot_link_transport_usb_wait' is never used. [unusedFunction]
+
+^
+src/boot/boot_link_transport_usb.c:93:0: style: The function 'boot_link_transport_usb_write' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sim_dev.c:51:0: style: The function 'cafs_sys_setegid' is never used. [unusedFunction]
+
+^
+src/device/cfifo.c:116:0: style: The function 'cfifo_close' is never used. [unusedFunction]
+
+^
+src/device/cfifo.c:14:0: style: The function 'cfifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/cfifo.c:12:0: style: The function 'cfifo_open' is never used. [unusedFunction]
+
+^
+src/device/cfifo.c:87:0: style: The function 'cfifo_read' is never used. [unusedFunction]
+
+^
+src/device/cfifo.c:101:0: style: The function 'cfifo_write' is never used. [unusedFunction]
+
+^
+src/sys/time/clocks.c:33:0: style: The function 'clock_getcpuclockid' is never used. [unusedFunction]
+
+^
+src/sys/time/clocks.c:106:0: style: The function 'clock_getres' is never used. [unusedFunction]
+
+^
+src/sys/time/clocks.c:141:0: style: The function 'clock_settime' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:79:0: style: The function 'cortexm_assign_zero_sum8' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:32:0: style: The function 'cortexm_busfault_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:56:0: style: The function 'cortexm_debug_monitor_handler' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:198:0: style: The function 'cortexm_enable_irq' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:19:0: style: The function 'cortexm_enter_cycle_scope' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:24:0: style: The function 'cortexm_exit_cycle_scope' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:204:0: style: The function 'cortexm_get_stack_ptr' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:256:0: style: The function 'cortexm_get_vector_table_addr' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:24:0: style: The function 'cortexm_hardfault_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:28:0: style: The function 'cortexm_memfault_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:52:0: style: The function 'cortexm_nmi_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:9:0: style: The function 'cortexm_reset_handler' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:109:0: style: The function 'cortexm_reset_mode' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:227:0: style: The function 'cortexm_set_irq_priority' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:119:0: style: The function 'cortexm_set_privileged_mode' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:133:0: style: The function 'cortexm_set_thread_mode' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:44:0: style: The function 'cortexm_svcall_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:40:0: style: The function 'cortexm_systick_handler' is never used. [unusedFunction]
+
+^
+src/boot/boot_interrupt_handlers.c:36:0: style: The function 'cortexm_usagefault_handler' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:179:0: style: The function 'cortexm_validate_callback' is never used. [unusedFunction]
+
+^
+src/cortexm/cortexm.c:99:0: style: The function 'cortexm_verify_zero_sum8' is never used. [unusedFunction]
+
+^
+src/cortexm/fault.c:75:0: style: The function 'cortexm_wdtfault_handler' is never used. [unusedFunction]
+
+^
+src/sys/unistd/crypt.c:32:0: style: The function 'crypt' is never used. [unusedFunction]
+
+^
+src/boot/boot_debug.c:62:0: style: The function 'dHex' is never used. [unusedFunction]
+
+^
+src/boot/boot_debug.c:69:0: style: The function 'dbin' is never used. [unusedFunction]
+
+^
+src/device/devfifo.c:159:0: style: The function 'devfifo_close' is never used. [unusedFunction]
+
+^
+src/device/devfifo.c:105:0: style: The function 'devfifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/devfifo.c:85:0: style: The function 'devfifo_open' is never used. [unusedFunction]
+
+^
+src/device/devfifo.c:126:0: style: The function 'devfifo_read' is never used. [unusedFunction]
+
+^
+src/device/devfifo.c:152:0: style: The function 'devfifo_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:210:0: style: The function 'devfs_aio' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:264:0: style: The function 'devfs_close' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:132:0: style: The function 'devfs_closedir' is never used. [unusedFunction]
+
+^
+src/cortexm/devfs.c:15:0: style: The function 'devfs_execute_cancel_handler' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:96:0: style: The function 'devfs_init' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:65:0: style: The function 'devfs_lookup_handle' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:137:0: style: The function 'devfs_open' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:102:0: style: The function 'devfs_opendir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:188:0: style: The function 'devfs_read' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:118:0: style: The function 'devfs_readdir_r' is never used. [unusedFunction]
+
+^
+src/sys/signal/pthread_kill.c:63:0: style: The function 'devfs_signal_callback' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:176:0: style: The function 'devfs_stat' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/devfs.c:200:0: style: The function 'devfs_write' is never used. [unusedFunction]
+
+^
+src/device/device_fifo.c:172:0: style: The function 'device_fifo_close' is never used. [unusedFunction]
+
+^
+src/device/device_fifo.c:96:0: style: The function 'device_fifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/device_fifo.c:78:0: style: The function 'device_fifo_open' is never used. [unusedFunction]
+
+^
+src/device/device_fifo.c:156:0: style: The function 'device_fifo_read' is never used. [unusedFunction]
+
+^
+src/device/device_fifo.c:163:0: style: The function 'device_fifo_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:152:0: style: The function 'drive_assetfs_close' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:228:0: style: The function 'drive_assetfs_closedir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:59:0: style: The function 'drive_assetfs_exit' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:166:0: style: The function 'drive_assetfs_fstat' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:38:0: style: The function 'drive_assetfs_init' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:144:0: style: The function 'drive_assetfs_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:77:0: style: The function 'drive_assetfs_open' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:198:0: style: The function 'drive_assetfs_opendir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:114:0: style: The function 'drive_assetfs_read' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:207:0: style: The function 'drive_assetfs_readdir_r' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:72:0: style: The function 'drive_assetfs_startup' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/drive_assetfs.c:179:0: style: The function 'drive_assetfs_stat' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_qspi.c:274:0: style: The function 'drive_cfi_qspi_close' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_qspi.c:80:0: style: The function 'drive_cfi_qspi_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_qspi.c:26:0: style: The function 'drive_cfi_qspi_open' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_qspi.c:209:0: style: The function 'drive_cfi_qspi_read' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_qspi.c:237:0: style: The function 'drive_cfi_qspi_write' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_spi.c:331:0: style: The function 'drive_cfi_spi_close' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_spi.c:119:0: style: The function 'drive_cfi_spi_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_spi.c:75:0: style: The function 'drive_cfi_spi_open' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_spi.c:232:0: style: The function 'drive_cfi_spi_read' is never used. [unusedFunction]
+
+^
+src/device/drive_cfi_spi.c:277:0: style: The function 'drive_cfi_spi_write' is never used. [unusedFunction]
+
+^
+src/device/drive_device.c:60:0: style: The function 'drive_device_close' is never used. [unusedFunction]
+
+^
+src/device/drive_device.c:28:0: style: The function 'drive_device_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_device.c:13:0: style: The function 'drive_device_open' is never used. [unusedFunction]
+
+^
+src/device/drive_device.c:18:0: style: The function 'drive_device_read' is never used. [unusedFunction]
+
+^
+src/device/drive_device.c:23:0: style: The function 'drive_device_write' is never used. [unusedFunction]
+
+^
+src/device/drive_mmc.c:118:0: style: The function 'drive_mmc_close' is never used. [unusedFunction]
+
+^
+src/device/drive_mmc.c:27:0: style: The function 'drive_mmc_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_mmc.c:12:0: style: The function 'drive_mmc_open' is never used. [unusedFunction]
+
+^
+src/device/drive_mmc.c:17:0: style: The function 'drive_mmc_read' is never used. [unusedFunction]
+
+^
+src/device/drive_mmc.c:22:0: style: The function 'drive_mmc_write' is never used. [unusedFunction]
+
+^
+src/device/drive_ram.c:105:0: style: The function 'drive_ram_close' is never used. [unusedFunction]
+
+^
+src/device/drive_ram.c:51:0: style: The function 'drive_ram_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_ram.c:28:0: style: The function 'drive_ram_open' is never used. [unusedFunction]
+
+^
+src/device/drive_ram.c:30:0: style: The function 'drive_ram_read' is never used. [unusedFunction]
+
+^
+src/device/drive_ram.c:39:0: style: The function 'drive_ram_write' is never used. [unusedFunction]
+
+^
+src/device/drive_sdio.c:173:0: style: The function 'drive_sdio_close' is never used. [unusedFunction]
+
+^
+src/device/drive_sdio.c:97:0: style: The function 'drive_sdio_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_sdio.c:14:0: style: The function 'drive_sdio_open' is never used. [unusedFunction]
+
+^
+src/device/drive_sdio.c:62:0: style: The function 'drive_sdio_read' is never used. [unusedFunction]
+
+^
+src/device/drive_sdio.c:92:0: style: The function 'drive_sdio_write' is never used. [unusedFunction]
+
+^
+src/device/drive_sdspi.c:544:0: style: The function 'drive_sdspi_close' is never used. [unusedFunction]
+
+^
+src/device/drive_sdspi.c:329:0: style: The function 'drive_sdspi_ioctl' is never used. [unusedFunction]
+
+^
+src/device/drive_sdspi.c:79:0: style: The function 'drive_sdspi_open' is never used. [unusedFunction]
+
+^
+src/device/drive_sdspi.c:190:0: style: The function 'drive_sdspi_read' is never used. [unusedFunction]
+
+^
+src/device/drive_sdspi.c:277:0: style: The function 'drive_sdspi_write' is never used. [unusedFunction]
+
+^
+src/boot/boot_debug.c:43:0: style: The function 'duint' is never used. [unusedFunction]
+
+^
+src/sys/unistd/crypt.c:27:0: style: The function 'encrypt' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:77:0: style: The function 'endgrent' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:62:0: style: The function 'endpwent' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:261:0: style: The function 'ffifo_close' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:81:0: style: The function 'ffifo_get_head' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:85:0: style: The function 'ffifo_get_tail' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:243:0: style: The function 'ffifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:69:0: style: The function 'ffifo_is_overflow' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:237:0: style: The function 'ffifo_open' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:249:0: style: The function 'ffifo_read' is never used. [unusedFunction]
+
+^
+src/device/ffifo.c:255:0: style: The function 'ffifo_write' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:243:0: style: The function 'fifo_close' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:11:0: style: The function 'fifo_inc_tail' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:223:0: style: The function 'fifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:217:0: style: The function 'fifo_open' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:236:0: style: The function 'fifo_read' is never used. [unusedFunction]
+
+^
+src/device/fifo.c:229:0: style: The function 'fifo_write' is never used. [unusedFunction]
+
+^
+src/device/full.c:22:0: style: The function 'full_close' is never used. [unusedFunction]
+
+^
+src/device/full.c:11:0: style: The function 'full_ioctl' is never used. [unusedFunction]
+
+^
+src/device/full.c:9:0: style: The function 'full_open' is never used. [unusedFunction]
+
+^
+src/device/full.c:13:0: style: The function 'full_read' is never used. [unusedFunction]
+
+^
+src/device/full.c:18:0: style: The function 'full_write' is never used. [unusedFunction]
+
+^
+src/sys/unistd/uidgid.c:105:0: style: The function 'getgid' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:63:0: style: The function 'getgrent' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:29:0: style: The function 'getgrgid' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:54:0: style: The function 'getgrgid_r' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:37:0: style: The function 'getgrnam' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:45:0: style: The function 'getgrnam_r' is never used. [unusedFunction]
+
+^
+src/sys/unistd/_getppid.c:16:0: style: The function 'getppid' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:50:0: style: The function 'getpwent' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:29:0: style: The function 'getpwnam' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:36:0: style: The function 'getpwnam_r' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:22:0: style: The function 'getpwuid' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:43:0: style: The function 'getpwuid_r' is never used. [unusedFunction]
+
+^
+src/sys/socket/socket_api.c:218:0: style: The function 'htonl' is never used. [unusedFunction]
+
+^
+src/sys/socket/socket_api.c:220:0: style: The function 'htons' is never used. [unusedFunction]
+
+^
+src/device/i2s_ffifo.c:273:0: style: The function 'i2s_ffifo_close' is never used. [unusedFunction]
+
+^
+src/device/i2s_ffifo.c:116:0: style: The function 'i2s_ffifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/i2s_ffifo.c:102:0: style: The function 'i2s_ffifo_open' is never used. [unusedFunction]
+
+^
+src/device/i2s_ffifo.c:239:0: style: The function 'i2s_ffifo_read' is never used. [unusedFunction]
+
+^
+src/device/i2s_ffifo.c:255:0: style: The function 'i2s_ffifo_write' is never used. [unusedFunction]
+
+^
+src/sys/process/launch.c:35:0: style: The function 'launch' is never used. [unusedFunction]
+
+^
+src/boot/boot_main.c:45:0: style: The function 'led_flash' is never used. [unusedFunction]
+
+^
+src/boot/boot_main.c:54:0: style: The function 'led_flash_error' is never used. [unusedFunction]
+
+^
+src/device/led_pio.c:45:0: style: The function 'led_pio_close' is never used. [unusedFunction]
+
+^
+src/device/led_pio.c:15:0: style: The function 'led_pio_ioctl' is never used. [unusedFunction]
+
+^
+src/device/led_pio.c:13:0: style: The function 'led_pio_open' is never used. [unusedFunction]
+
+^
+src/device/led_pio.c:37:0: style: The function 'led_pio_read' is never used. [unusedFunction]
+
+^
+src/device/led_pio.c:41:0: style: The function 'led_pio_write' is never used. [unusedFunction]
+
+^
+src/device/led_pwm.c:44:0: style: The function 'led_pwm_close' is never used. [unusedFunction]
+
+^
+src/device/led_pwm.c:15:0: style: The function 'led_pwm_ioctl' is never used. [unusedFunction]
+
+^
+src/device/led_pwm.c:13:0: style: The function 'led_pwm_open' is never used. [unusedFunction]
+
+^
+src/device/led_pwm.c:36:0: style: The function 'led_pwm_read' is never used. [unusedFunction]
+
+^
+src/device/led_pwm.c:40:0: style: The function 'led_pwm_write' is never used. [unusedFunction]
+
+^
+src/link_transport/link1_transport_slave.c:16:0: style: The function 'link1_transport_slaveread' is never used. [unusedFunction]
+
+^
+src/link_transport/link1_transport_slave.c:94:0: style: The function 'link1_transport_slavewrite' is never used. [unusedFunction]
+
+^
+src/link_transport/link2_transport_slave.c:14:0: style: The function 'link2_transport_slaveread' is never used. [unusedFunction]
+
+^
+src/link_transport/link2_transport_slave.c:91:0: style: The function 'link2_transport_slavewrite' is never used. [unusedFunction]
+
+^
+src/link_transport/link3_transport_slave.c:39:0: style: The function 'link3_slave_start_secure_session' is never used. [unusedFunction]
+
+^
+src/link_transport/link3_transport_master.c:130:0: style: The function 'link3_transport_mastersettimeout' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:812:0: style: The function 'link_chmod' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:765:0: style: The function 'link_chown' is never used. [unusedFunction]
+
+^
+src/link/link_stdio.c:11:0: style: The function 'link_close_stdio' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:241:0: style: The function 'link_closedir' is never used. [unusedFunction]
+
+^
+src/sys/link/link_thread.c:145:0: style: The function 'link_cmd_isbootloader' is never used. [unusedFunction]
+
+^
+src/link/link.c:58:0: style: The function 'link_connect' is never used. [unusedFunction]
+
+^
+src/link/link.c:360:0: style: The function 'link_del_device_list' is never used. [unusedFunction]
+
+^
+src/link/link.c:362:0: style: The function 'link_device_list_entry' is never used. [unusedFunction]
+
+^
+src/link/link.c:44:0: style: The function 'link_disconnect' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:208:0: style: The function 'link_eraseflash' is never used. [unusedFunction]
+
+^
+src/link/link_process.c:11:0: style: The function 'link_exec' is never used. [unusedFunction]
+
+^
+src/link/link.c:42:0: style: The function 'link_exit' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:643:0: style: The function 'link_fstat' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:167:0: style: The function 'link_get_public_key' is never used. [unusedFunction]
+
+^
+src/link/link_sys_attr.c:13:0: style: The function 'link_get_sys_info' is never used. [unusedFunction]
+
+^
+src/link/link_time.c:33:0: style: The function 'link_gettime' is never used. [unusedFunction]
+
+^
+src/link/link.c:40:0: style: The function 'link_init' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:197:0: style: The function 'link_is_signature_required' is never used. [unusedFunction]
+
+^
+src/link/link_process.c:58:0: style: The function 'link_kill_pid' is never used. [unusedFunction]
+
+^
+src/link/link.c:35:0: style: The function 'link_load_default_driver' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:529:0: style: The function 'link_lseek' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:12:0: style: The function 'link_mkdir' is never used. [unusedFunction]
+
+^
+src/link/link.c:237:0: style: The function 'link_mkfs' is never used. [unusedFunction]
+
+^
+src/link/link.c:285:0: style: The function 'link_new_device_list' is never used. [unusedFunction]
+
+^
+src/link/link_stdio.c:7:0: style: The function 'link_open_stdio' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:116:0: style: The function 'link_opendir' is never used. [unusedFunction]
+
+^
+src/link/link.c:179:0: style: The function 'link_ping' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:281:0: style: The function 'link_read' is never used. [unusedFunction]
+
+^
+src/link/link_stdio.c:13:0: style: The function 'link_read_stdout' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:169:0: style: The function 'link_readdir_r' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:213:0: style: The function 'link_readflash' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:709:0: style: The function 'link_rename' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:87:0: style: The function 'link_reset' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:143:0: style: The function 'link_resetbootloader' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:292:0: style: The function 'link_rewinddir' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:69:0: style: The function 'link_rmdir' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:277:0: style: The function 'link_seekdir' is never used. [unusedFunction]
+
+^
+src/link/link_debug.c:7:0: style: The function 'link_set_debug' is never used. [unusedFunction]
+
+^
+src/link/link_time.c:9:0: style: The function 'link_settime' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:572:0: style: The function 'link_stat' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:420:0: style: The function 'link_symlink' is never used. [unusedFunction]
+
+^
+src/link/link_dir.c:285:0: style: The function 'link_telldir' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:476:0: style: The function 'link_unlink' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:147:0: style: The function 'link_verify_signature' is never used. [unusedFunction]
+
+^
+src/link/link_file.c:329:0: style: The function 'link_write' is never used. [unusedFunction]
+
+^
+src/link/link_stdio.c:17:0: style: The function 'link_write_stdin' is never used. [unusedFunction]
+
+^
+src/link/link_bootloader.c:250:0: style: The function 'link_writeflash' is never used. [unusedFunction]
+
+^
+src/sys/aio/aio.c:178:0: style: The function 'lio_listio' is never used. [unusedFunction]
+
+^
+src/sys/malloc/mallinfo.c:6:0: style: The function 'mallinfo' is never used. [unusedFunction]
+
+^
+src/sys/malloc/mallocr.c:276:0: style: The function 'malloc_is_memory_corrupt' is never used. [unusedFunction]
+
+^
+src/sys/malloc/malloc_stats.c:8:0: style: The function 'malloc_stats' is never used. [unusedFunction]
+
+^
+src/mcu/mcu.c:13:0: style: The function 'mcu_execute_event_handler' is never used. [unusedFunction]
+
+^
+src/mcu/mcu.c:32:0: style: The function 'mcu_select_attr' is never used. [unusedFunction]
+
+^
+src/mcu/mcu.c:63:0: style: The function 'mcu_set_pin_assignment' is never used. [unusedFunction]
+
+^
+src/mcu/sys.c:28:0: style: The function 'mcu_sys_getsecurity' is never used. [unusedFunction]
+
+^
+src/mcu/sys.c:35:0: style: The function 'mcu_sys_setsecuritylock' is never used. [unusedFunction]
+
+^
+src/cortexm/mpu.c:39:0: style: The function 'mpu_calc_size' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:541:0: style: The function 'mq_close' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:610:0: style: The function 'mq_flush' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:623:0: style: The function 'mq_notify' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:745:0: style: The function 'mq_send' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:350:0: style: The function 'mq_setattr' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:841:0: style: The function 'mq_tryreceive' is never used. [unusedFunction]
+
+^
+src/sys/mqueue/mqueue.c:577:0: style: The function 'mq_unlink' is never used. [unusedFunction]
+
+^
+src/sys/socket/socket_api.c:222:0: style: The function 'ntohl' is never used. [unusedFunction]
+
+^
+src/sys/socket/socket_api.c:224:0: style: The function 'ntohs' is never used. [unusedFunction]
+
+^
+src/device/null.c:23:0: style: The function 'null_close' is never used. [unusedFunction]
+
+^
+src/device/null.c:10:0: style: The function 'null_ioctl' is never used. [unusedFunction]
+
+^
+src/device/null.c:8:0: style: The function 'null_open' is never used. [unusedFunction]
+
+^
+src/device/null.c:14:0: style: The function 'null_read' is never used. [unusedFunction]
+
+^
+src/device/null.c:18:0: style: The function 'null_write' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:53:0: style: The function 'open_pio' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:9:0: style: The function 'posix_trace_attr_destroy' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:11:0: style: The function 'posix_trace_attr_getclockres' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:15:0: style: The function 'posix_trace_attr_getcreatetime' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:23:0: style: The function 'posix_trace_attr_getgenversion' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:27:0: style: The function 'posix_trace_attr_getinherited' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:29:0: style: The function 'posix_trace_attr_getlogfullpolicy' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:33:0: style: The function 'posix_trace_attr_getlogsize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:39:0: style: The function 'posix_trace_attr_getmaxdatasize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:49:0: style: The function 'posix_trace_attr_getmaxusereventsize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:57:0: style: The function 'posix_trace_attr_getname' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:62:0: style: The function 'posix_trace_attr_getstreamfullpolicy' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:67:0: style: The function 'posix_trace_attr_getstreamsize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:83:0: style: The function 'posix_trace_attr_setinherited' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:88:0: style: The function 'posix_trace_attr_setlogfullpolicy' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:93:0: style: The function 'posix_trace_attr_setlogsize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:100:0: style: The function 'posix_trace_attr_setmaxdatasize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:105:0: style: The function 'posix_trace_attr_setname' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:116:0: style: The function 'posix_trace_attr_setstreamfullpolicy' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace_attr.c:111:0: style: The function 'posix_trace_attr_setstreamsize' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:119:0: style: The function 'posix_trace_clear' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:126:0: style: The function 'posix_trace_close' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:164:0: style: The function 'posix_trace_create' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:236:0: style: The function 'posix_trace_create_withlog' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:328:0: style: The function 'posix_trace_event' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:319:0: style: The function 'posix_trace_event_addr' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:358:0: style: The function 'posix_trace_eventid_equal' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:368:0: style: The function 'posix_trace_eventid_get_name' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:425:0: style: The function 'posix_trace_eventid_open' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:432:0: style: The function 'posix_trace_eventset_add' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:437:0: style: The function 'posix_trace_eventset_del' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:442:0: style: The function 'posix_trace_eventset_empty' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:447:0: style: The function 'posix_trace_eventset_fill' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:465:0: style: The function 'posix_trace_eventset_ismember' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:619:0: style: The function 'posix_trace_eventtypelist_getnext_id' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:627:0: style: The function 'posix_trace_eventtypelist_rewind' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:477:0: style: The function 'posix_trace_flush' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:483:0: style: The function 'posix_trace_get_attr' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:488:0: style: The function 'posix_trace_get_filter' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:493:0: style: The function 'posix_trace_get_status' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:633:0: style: The function 'posix_trace_getnext_event' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:522:0: style: The function 'posix_trace_open' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:530:0: style: The function 'posix_trace_rewind' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:537:0: style: The function 'posix_trace_set_filter' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:588:0: style: The function 'posix_trace_start' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:599:0: style: The function 'posix_trace_stop' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:643:0: style: The function 'posix_trace_timedgetnext_event' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:610:0: style: The function 'posix_trace_trid_eventid_open' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:670:0: style: The function 'posix_trace_trygetnext_data' is never used. [unusedFunction]
+
+^
+src/sys/trace/posix_trace.c:656:0: style: The function 'posix_trace_trygetnext_event' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:31:0: style: The function 'pthread_attr_getdetachstate' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:69:0: style: The function 'pthread_attr_getguardsize' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:94:0: style: The function 'pthread_attr_getinheritsched' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:144:0: style: The function 'pthread_attr_getschedparam' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:189:0: style: The function 'pthread_attr_getschedpolicy' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:229:0: style: The function 'pthread_attr_getscope' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:316:0: style: The function 'pthread_attr_getstackaddr' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:278:0: style: The function 'pthread_attr_getstacksize' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:47:0: style: The function 'pthread_attr_setdetachstate' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:84:0: style: The function 'pthread_attr_setguardsize' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:115:0: style: The function 'pthread_attr_setinheritsched' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:250:0: style: The function 'pthread_attr_setscope' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:326:0: style: The function 'pthread_attr_setstackaddr' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_attr.c:295:0: style: The function 'pthread_attr_setstacksize' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cancel.c:76:0: style: The function 'pthread_cancel' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cond.c:90:0: style: The function 'pthread_cond_broadcast' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cond.c:152:0: style: The function 'pthread_cond_wait' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_condattr.c:46:0: style: The function 'pthread_condattr_destroy' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_condattr.c:94:0: style: The function 'pthread_condattr_getclock' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_condattr.c:60:0: style: The function 'pthread_condattr_getpshared' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_condattr.c:109:0: style: The function 'pthread_condattr_setclock' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_create.c:26:0: style: The function 'pthread_create' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_create.c:136:0: style: The function 'pthread_exit' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_create.c:93:0: style: The function 'pthread_join' is never used. [unusedFunction]
+
+^
+src/sys/signal/pthread_kill.c:241:0: style: The function 'pthread_kill' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutex.c:235:0: style: The function 'pthread_mutex_getprioceiling' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutex.c:250:0: style: The function 'pthread_mutex_setprioceiling' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutex.c:86:0: style: The function 'pthread_mutex_trylock' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr_init.c:45:0: style: The function 'pthread_mutexattr_destroy' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr.c:26:0: style: The function 'pthread_mutexattr_getprioceiling' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr.c:70:0: style: The function 'pthread_mutexattr_getprotocol' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr.c:113:0: style: The function 'pthread_mutexattr_getpshared' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr.c:153:0: style: The function 'pthread_mutexattr_gettype' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_mutexattr.c:86:0: style: The function 'pthread_mutexattr_setprotocol' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cancel.c:97:0: style: The function 'pthread_setcancelstate' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cancel.c:127:0: style: The function 'pthread_setcanceltype' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_schedparam.c:60:0: style: The function 'pthread_setschedparam' is never used. [unusedFunction]
+
+^
+src/sys/pthread/pthread_cancel.c:152:0: style: The function 'pthread_testcancel' is never used. [unusedFunction]
+
+^
+src/device/random.c:84:0: style: The function 'random_close' is never used. [unusedFunction]
+
+^
+src/device/random.c:24:0: style: The function 'random_ioctl' is never used. [unusedFunction]
+
+^
+src/device/random.c:18:0: style: The function 'random_open' is never used. [unusedFunction]
+
+^
+src/device/random.c:57:0: style: The function 'random_read' is never used. [unusedFunction]
+
+^
+src/device/random.c:78:0: style: The function 'random_write' is never used. [unusedFunction]
+
+^
+src/device/reset_tmr.c:35:0: style: The function 'reset_tmr_close' is never used. [unusedFunction]
+
+^
+src/device/reset_tmr.c:15:0: style: The function 'reset_tmr_ioctl' is never used. [unusedFunction]
+
+^
+src/device/reset_tmr.c:11:0: style: The function 'reset_tmr_open' is never used. [unusedFunction]
+
+^
+src/device/reset_tmr.c:19:0: style: The function 'reset_tmr_read' is never used. [unusedFunction]
+
+^
+src/device/reset_tmr.c:21:0: style: The function 'reset_tmr_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/rootfs.c:100:0: style: The function 'rootfs_closedir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/rootfs.c:30:0: style: The function 'rootfs_init' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/rootfs.c:62:0: style: The function 'rootfs_opendir' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/rootfs.c:73:0: style: The function 'rootfs_readdir_r' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/rootfs.c:35:0: style: The function 'rootfs_stat' is never used. [unusedFunction]
+
+^
+src/sys/sched/sched.c:79:0: style: The function 'sched_getparam' is never used. [unusedFunction]
+
+^
+src/sys/sched/sched.c:101:0: style: The function 'sched_getscheduler' is never used. [unusedFunction]
+
+^
+src/sys/sched/sched.c:120:0: style: The function 'sched_rr_get_interval' is never used. [unusedFunction]
+
+^
+src/sys/sched/sched.c:139:0: style: The function 'sched_setparam' is never used. [unusedFunction]
+
+^
+src/sys/sched/sched.c:170:0: style: The function 'sched_setscheduler' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_debug.c:29:0: style: The function 'scheduler_debug_print_active' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_debug.c:39:0: style: The function 'scheduler_debug_print_executing' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_debug.c:14:0: style: The function 'scheduler_debug_print_tasks' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_debug.c:50:0: style: The function 'scheduler_debug_print_timers' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_fault.c:85:0: style: The function 'scheduler_fault_build_memory_string' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_timing.c:153:0: style: The function 'scheduler_timing_add_mcu_timeval' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_timing.c:137:0: style: The function 'scheduler_timing_convert_mcu_timeval' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_timing.c:147:0: style: The function 'scheduler_timing_get_realtime' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_timing.c:166:0: style: The function 'scheduler_timing_subtract_mcu_timeval' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:139:0: style: The function 'scheduler_tmr_disable' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:137:0: style: The function 'scheduler_tmr_enable' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:20:0: style: The function 'scheduler_tmr_init' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:145:0: style: The function 'scheduler_tmr_microseconds' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:147:0: style: The function 'scheduler_tmr_nanoseconds' is never used. [unusedFunction]
+
+^
+src/sys/scheduler/scheduler_tmr.c:141:0: style: The function 'scheduler_tmr_set_channel' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:255:0: style: The function 'sem_close' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:129:0: style: The function 'sem_destroy' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:145:0: style: The function 'sem_getvalue' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:110:0: style: The function 'sem_init' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:172:0: style: The function 'sem_open' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:284:0: style: The function 'sem_post' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:318:0: style: The function 'sem_timedwait' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:382:0: style: The function 'sem_unlink' is never used. [unusedFunction]
+
+^
+src/sys/semaphore/sem.c:423:0: style: The function 'sem_wait' is never used. [unusedFunction]
+
+^
+src/sys/grp/grp.c:70:0: style: The function 'setgrent' is never used. [unusedFunction]
+
+^
+src/sys/unistd/crypt.c:36:0: style: The function 'setkey' is never used. [unusedFunction]
+
+^
+src/sys/pwd/pwd.c:56:0: style: The function 'setpwent' is never used. [unusedFunction]
+
+^
+src/sys/time/_settimeofday.c:63:0: style: The function 'settimeofday' is never used. [unusedFunction]
+
+^
+src/sys/unistd/uidgid.c:102:0: style: The function 'setuid' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_block.c:41:0: style: The function 'sffs_block_get_serialno' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_diag.c:319:0: style: The function 'sffs_diag_getfile' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_diag.c:41:0: style: The function 'sffs_diag_show_eraseable' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_diag.c:34:0: style: The function 'sffs_diag_showfile' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_file.c:280:0: style: The function 'sffs_file_swapsegment' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs_tp.c:228:0: style: The function 'sffs_getcount' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs.c:64:0: style: The function 'sffs_ismounted' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sim_dev.c:59:0: style: The function 'sffs_sys_getegid' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sim_dev.c:55:0: style: The function 'sffs_sys_geteuid' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sim_dev.c:47:0: style: The function 'sffs_sys_seteuid' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs.c:34:0: style: The function 'sffs_unlock' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sffs.c:59:0: style: The function 'sffs_unmount' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sim_dev.c:179:0: style: The function 'show_mem' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:73:0: style: The function 'sigaction' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:194:0: style: The function 'sighold' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:199:0: style: The function 'sigignore' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:30:0: style: The function 'signal' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:204:0: style: The function 'sigpause' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:158:0: style: The function 'sigprocmask' is never used. [unusedFunction]
+
+^
+src/sys/signal/sig_realtime.c:34:0: style: The function 'sigqueue' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:211:0: style: The function 'sigrelse' is never used. [unusedFunction]
+
+^
+src/sys/signal/signal.c:177:0: style: The function 'sigsuspend' is never used. [unusedFunction]
+
+^
+src/sys/signal/sig_realtime.c:94:0: style: The function 'sigtimedwait' is never used. [unusedFunction]
+
+^
+src/sys/signal/sig_realtime.c:62:0: style: The function 'sigwait' is never used. [unusedFunction]
+
+^
+src/sys/signal/sig_realtime.c:145:0: style: The function 'sigwaitinfo' is never used. [unusedFunction]
+
+^
+src/sys/sos_default_thread.c:50:0: style: The function 'sos_default_thread' is never used. [unusedFunction]
+
+^
+src/sys/sos_main.c:101:0: style: The function 'sos_get_bootloader_api' is never used. [unusedFunction]
+
+^
+src/sys/sos_led.c:27:0: style: The function 'sos_led_boot_startup' is never used. [unusedFunction]
+
+^
+src/sys/sos_led.c:7:0: style: The function 'sos_led_startup' is never used. [unusedFunction]
+
+^
+src/sys/sos_led_root.c:32:0: style: The function 'sos_led_svcall_error' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:140:0: style: The function 'sos_link_transport_usb_close' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:153:0: style: The function 'sos_link_transport_usb_flush' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:30:0: style: The function 'sos_link_transport_usb_msft_string_event' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:81:0: style: The function 'sos_link_transport_usb_open' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:134:0: style: The function 'sos_link_transport_usb_read' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:146:0: style: The function 'sos_link_transport_usb_wait' is never used. [unusedFunction]
+
+^
+src/usbd/sos_link_transport_usb.c:125:0: style: The function 'sos_link_transport_usb_write' is never used. [unusedFunction]
+
+^
+src/sys/trace/sos_trace.c:44:0: style: The function 'sos_trace_root_trace_event' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf.c:254:0: style: The function 'sst25vf_close' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf.c:250:0: style: The function 'sst25vf_ioctl' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf.c:16:0: style: The function 'sst25vf_open' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf.c:80:0: style: The function 'sst25vf_read' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:67:0: style: The function 'sst25vf_share_block_erase_32kb' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:76:0: style: The function 'sst25vf_share_block_erase_64kb' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:99:0: style: The function 'sst25vf_share_read_byte' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:152:0: style: The function 'sst25vf_share_read_id' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:91:0: style: The function 'sst25vf_share_write_byte' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_share.c:34:0: style: The function 'sst25vf_share_write_dbsy' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_tmr.c:225:0: style: The function 'sst25vf_tmr_close' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_tmr.c:221:0: style: The function 'sst25vf_tmr_ioctl' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_tmr.c:16:0: style: The function 'sst25vf_tmr_open' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_tmr.c:75:0: style: The function 'sst25vf_tmr_read' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf_tmr.c:181:0: style: The function 'sst25vf_tmr_write' is never used. [unusedFunction]
+
+^
+src/device/microchip/sst25vf.c:190:0: style: The function 'sst25vf_write' is never used. [unusedFunction]
+
+^
+src/device/stream_ffifo.c:334:0: style: The function 'stream_ffifo_close' is never used. [unusedFunction]
+
+^
+src/device/stream_ffifo.c:164:0: style: The function 'stream_ffifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/stream_ffifo.c:136:0: style: The function 'stream_ffifo_open' is never used. [unusedFunction]
+
+^
+src/device/stream_ffifo.c:302:0: style: The function 'stream_ffifo_read' is never used. [unusedFunction]
+
+^
+src/device/stream_ffifo.c:318:0: style: The function 'stream_ffifo_write' is never used. [unusedFunction]
+
+^
+src/device/switchboard.c:148:0: style: The function 'switchboard_close' is never used. [unusedFunction]
+
+^
+src/device/switchboard.c:49:0: style: The function 'switchboard_ioctl' is never used. [unusedFunction]
+
+^
+src/device/switchboard.c:44:0: style: The function 'switchboard_open' is never used. [unusedFunction]
+
+^
+src/device/switchboard.c:101:0: style: The function 'switchboard_read' is never used. [unusedFunction]
+
+^
+src/device/switchboard.c:144:0: style: The function 'switchboard_write' is never used. [unusedFunction]
+
+^
+src/sys/sys_23_dev.c:51:0: style: The function 'sys_23_close' is never used. [unusedFunction]
+
+^
+src/sys/sys_23_dev.c:15:0: style: The function 'sys_23_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sys_23_dev.c:13:0: style: The function 'sys_23_open' is never used. [unusedFunction]
+
+^
+src/sys/sys_23_dev.c:43:0: style: The function 'sys_23_read' is never used. [unusedFunction]
+
+^
+src/sys/sys_23_dev.c:47:0: style: The function 'sys_23_write' is never used. [unusedFunction]
+
+^
+src/sys/sys_26_dev.c:89:0: style: The function 'sys_26_close' is never used. [unusedFunction]
+
+^
+src/sys/sys_26_dev.c:24:0: style: The function 'sys_26_ioctl' is never used. [unusedFunction]
+
+^
+src/sys/sys_26_dev.c:22:0: style: The function 'sys_26_open' is never used. [unusedFunction]
+
+^
+src/sys/sys_26_dev.c:77:0: style: The function 'sys_26_read' is never used. [unusedFunction]
+
+^
+src/sys/sys_26_dev.c:83:0: style: The function 'sys_26_write' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs.c:65:0: style: The function 'sysfs_always_mounted' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs.c:90:0: style: The function 'sysfs_get_filename' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sysfs.c:75:0: style: The function 'sysfs_isvalidset' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sysfs.c:158:0: style: The function 'sysfs_notsup' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sysfs.c:163:0: style: The function 'sysfs_notsup_null' is never used. [unusedFunction]
+
+^
+src/sys/sffs/sysfs.c:168:0: style: The function 'sysfs_notsup_void' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs_file.c:146:0: style: The function 'sysfs_shared_aio' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs_file.c:112:0: style: The function 'sysfs_shared_fsync' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs_file.c:126:0: style: The function 'sysfs_shared_lock' is never used. [unusedFunction]
+
+^
+src/sys/sysfs/sysfs_file.c:130:0: style: The function 'sysfs_shared_unlock' is never used. [unusedFunction]
+
+^
+src/sys/termios/termios.c:12:0: style: The function 'tcgetattr' is never used. [unusedFunction]
+
+^
+src/sys/sffs/tests.c:46:0: style: The function 'test_dir' is never used. [unusedFunction]
+
+^
+src/sys/sffs/tests.c:82:0: style: The function 'test_listdir' is never used. [unusedFunction]
+
+^
+src/sys/sffs/main.c:194:0: style: The function 'test_stat' is never used. [unusedFunction]
+
+^
+src/sys/sffs/main.c:190:0: style: The function 'test_unlink' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:106:0: style: The function 'timer_create' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:141:0: style: The function 'timer_delete' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:235:0: style: The function 'timer_getoverrun' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:204:0: style: The function 'timer_gettime' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:164:0: style: The function 'timer_settime' is never used. [unusedFunction]
+
+^
+src/device/tty_uart.c:89:0: style: The function 'tty_uart_close' is never used. [unusedFunction]
+
+^
+src/device/tty_uart.c:18:0: style: The function 'tty_uart_ioctl' is never used. [unusedFunction]
+
+^
+src/device/tty_uart.c:13:0: style: The function 'tty_uart_open' is never used. [unusedFunction]
+
+^
+src/device/tty_uart.c:85:0: style: The function 'tty_uart_read' is never used. [unusedFunction]
+
+^
+src/device/tty_uart.c:81:0: style: The function 'tty_uart_write' is never used. [unusedFunction]
+
+^
+src/device/tty_usbbulk.c:29:0: style: The function 'tty_usbbulk_close' is never used. [unusedFunction]
+
+^
+src/device/tty_usbbulk.c:9:0: style: The function 'tty_usbbulk_ioctl' is never used. [unusedFunction]
+
+^
+src/device/tty_usbbulk.c:7:0: style: The function 'tty_usbbulk_open' is never used. [unusedFunction]
+
+^
+src/device/tty_usbbulk.c:20:0: style: The function 'tty_usbbulk_read' is never used. [unusedFunction]
+
+^
+src/device/tty_usbbulk.c:13:0: style: The function 'tty_usbbulk_write' is never used. [unusedFunction]
+
+^
+src/sys/time/timer.c:87:0: style: The function 'ualarm' is never used. [unusedFunction]
+
+^
+src/device/uartfifo.c:143:0: style: The function 'uartfifo_close' is never used. [unusedFunction]
+
+^
+src/device/uartfifo.c:72:0: style: The function 'uartfifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/uartfifo.c:60:0: style: The function 'uartfifo_open' is never used. [unusedFunction]
+
+^
+src/device/uartfifo.c:131:0: style: The function 'uartfifo_read' is never used. [unusedFunction]
+
+^
+src/device/uartfifo.c:137:0: style: The function 'uartfifo_write' is never used. [unusedFunction]
+
+^
+src/device/urandom.c:20:0: style: The function 'urandom_close' is never used. [unusedFunction]
+
+^
+src/device/urandom.c:10:0: style: The function 'urandom_ioctl' is never used. [unusedFunction]
+
+^
+src/device/urandom.c:8:0: style: The function 'urandom_open' is never used. [unusedFunction]
+
+^
+src/device/urandom.c:12:0: style: The function 'urandom_read' is never used. [unusedFunction]
+
+^
+src/device/urandom.c:16:0: style: The function 'urandom_write' is never used. [unusedFunction]
+
+^
+src/usbd/usbd_control.c:178:0: style: The function 'usbd_control_detach' is never used. [unusedFunction]
+
+^
+src/usbd/usbd_control.c:166:0: style: The function 'usbd_control_reset' is never used. [unusedFunction]
+
+^
+src/device/usbfifo.c:180:0: style: The function 'usbfifo_close' is never used. [unusedFunction]
+
+^
+src/device/usbfifo.c:86:0: style: The function 'usbfifo_ioctl' is never used. [unusedFunction]
+
+^
+src/device/usbfifo.c:75:0: style: The function 'usbfifo_open' is never used. [unusedFunction]
+
+^
+src/device/usbfifo.c:163:0: style: The function 'usbfifo_read' is never used. [unusedFunction]
+
+^
+src/device/usbfifo.c:169:0: style: The function 'usbfifo_write' is never used. [unusedFunction]
+
+^
+src/device/zero.c:20:0: style: The function 'zero_close' is never used. [unusedFunction]
+
+^
+src/device/zero.c:11:0: style: The function 'zero_ioctl' is never used. [unusedFunction]
+
+^
+src/device/zero.c:9:0: style: The function 'zero_open' is never used. [unusedFunction]
+
+^
+src/device/zero.c:13:0: style: The function 'zero_read' is never used. [unusedFunction]
+
+^
+src/device/zero.c:18:0: style: The function 'zero_write' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
